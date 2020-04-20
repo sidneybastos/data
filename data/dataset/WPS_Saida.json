@@ -14,7 +14,7 @@
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "estacionamento/11/20200108/saida/"
+			"relativeUrl": "estacionamento/11/20200108/saida/?detalhe=true"
 		},
 		"schema": []
 	}
