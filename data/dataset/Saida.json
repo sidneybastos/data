@@ -1,0 +1,21 @@
+{
+	"name": "Saida",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ParkingPLus",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"detalhe": {
+				"type": "string",
+				"defaultValue": "true"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "/17/20190501/saida/"
+		},
+		"schema": []
+	}
+}
