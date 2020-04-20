@@ -1,0 +1,130 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "copyWPS_ADLS",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"quoteAllText": true
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['detalhes'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['carro']['descricao']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['carro']['detalhes'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['carro']['subdetalhes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['carro']['quantidade']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['caminhao']['descricao']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['caminhao']['detalhes'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['caminhao']['subdetalhes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['caminhao']['quantidade']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['moto']['descricao']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['moto']['detalhes'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['moto']['subdetalhes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['subdetalhes']['moto']['quantidade']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['quantidade']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "WPS_Saida",
+						"type": "DatasetReference",
+						"parameters": {
+							"detalhe": "true"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "11_20200108_saida",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
