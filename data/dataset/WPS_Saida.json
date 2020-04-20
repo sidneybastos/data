@@ -1,5 +1,5 @@
 {
-	"name": "Saida",
+	"name": "WPS_Saida",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ParkingPLus",
