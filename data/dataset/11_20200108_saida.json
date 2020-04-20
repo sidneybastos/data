@@ -1,0 +1,200 @@
+{
+	"name": "11_20200108_saida",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "conn_adls_sidney",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"folderPath": "WPS"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"detalhes": {
+					"type": "array"
+				},
+				"subdetalhes": {
+					"type": "object",
+					"properties": {
+						"carro": {
+							"type": "object",
+							"properties": {
+								"descricao": {
+									"type": "string"
+								},
+								"detalhes": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"codigo": {
+												"type": "integer"
+											},
+											"descricao": {
+												"type": "string"
+											},
+											"data": {
+												"type": "string"
+											},
+											"ticket": {
+												"type": "string"
+											},
+											"placa": {
+												"type": "string"
+											},
+											"mensal": {
+												"type": "boolean"
+											},
+											"terminal": {
+												"type": "object",
+												"properties": {
+													"codigo": {
+														"type": "integer"
+													},
+													"tipo": {
+														"type": "string"
+													}
+												}
+											},
+											"setor": {
+												"type": "object",
+												"properties": {
+													"descricao": {
+														"type": "string"
+													}
+												}
+											},
+											"tipoVeiculo": {
+												"type": "object",
+												"properties": {
+													"descricao": {
+														"type": "string"
+													}
+												}
+											},
+											"tipoServico": {
+												"type": "object",
+												"properties": {
+													"descricao": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								},
+								"subdetalhes": {
+									"type": "object"
+								},
+								"quantidade": {
+									"type": "integer"
+								}
+							}
+						},
+						"caminhao": {
+							"type": "object",
+							"properties": {
+								"descricao": {
+									"type": "string"
+								},
+								"detalhes": {
+									"type": "array"
+								},
+								"subdetalhes": {
+									"type": "object"
+								},
+								"quantidade": {
+									"type": "integer"
+								}
+							}
+						},
+						"moto": {
+							"type": "object",
+							"properties": {
+								"descricao": {
+									"type": "string"
+								},
+								"detalhes": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"codigo": {
+												"type": "integer"
+											},
+											"descricao": {
+												"type": "string"
+											},
+											"data": {
+												"type": "string"
+											},
+											"ticket": {
+												"type": "string"
+											},
+											"mensal": {
+												"type": "boolean"
+											},
+											"terminal": {
+												"type": "object",
+												"properties": {
+													"codigo": {
+														"type": "integer"
+													},
+													"tipo": {
+														"type": "string"
+													}
+												}
+											},
+											"setor": {
+												"type": "object",
+												"properties": {
+													"descricao": {
+														"type": "string"
+													}
+												}
+											},
+											"tipoVeiculo": {
+												"type": "object",
+												"properties": {
+													"codigo": {
+														"type": "integer"
+													},
+													"descricao": {
+														"type": "string"
+													}
+												}
+											},
+											"tipoServico": {
+												"type": "object",
+												"properties": {
+													"descricao": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								},
+								"subdetalhes": {
+									"type": "object"
+								},
+								"quantidade": {
+									"type": "integer"
+								}
+							}
+						}
+					}
+				},
+				"quantidade": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
