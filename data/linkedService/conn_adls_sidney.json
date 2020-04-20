@@ -1,0 +1,13 @@
+{
+	"name": "conn_adls_sidney",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://sidney.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "cef62251-8ab0-48b2-834c-f75e8864e1e1",
+			"subscriptionId": "624b45c9-60c1-41f1-a0bf-f6a76dd0ddb2",
+			"resourceGroupName": "rg-sidney"
+		}
+	}
+}
